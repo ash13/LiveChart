@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
 <style>
-
+.div1 {
+    width: 200px;
+    height: 130px;
+    border: 0.2px solid black;
+    style="font-size:10%"
+}
 <!--
 #mydiv2 {
     position: absolute;
@@ -102,9 +107,18 @@ border: 1px solid #d3d3d3;
 
 <button id="jquerytest">Save Class layout</button>
 </div>
+<br></br>
 
+<p>Choose the class time:</p>
+Date:<input id="date" type="date" name="class_date" />
+<br>
+Time:<input id="time" type="time" name="class_time" />
+<br>
+<br>
+<p>Color codes:</p>
 
-
+<div class="div1"><font color="#2196F3"><b>Blue:</b></font> Active </b><br><font color="#008040"><b>Dark green:</b></font> Correctness Streak</b><br><font color="#40ff00"><b>Light Green:</b></font> Learning <br><font color="#990000"> <b>Maroon</b></font>: Struggling <br><font color="#ffd700"><b>Yellow</b></font>:Idle</font>  </div>
+<br>
 
 <!--
 
@@ -671,7 +685,7 @@ function dragElement(elmnt) {
                     console.log("Learning student:"+d)
                     learning_id='mydiv'+d+'header';
                     var learning_stud_div = document.getElementById(learning_id);
-                    learning_stud_div.style.backgroundColor='#40ff00';
+                    learning_stud_div.style.backgroundColor='#ADFF2F'//#40ff00';
                     }
                  
                 //console.log("Calling query_log");
@@ -1047,12 +1061,21 @@ function dragElement(elmnt) {
     lis=[];
     //dat= document.getElementById("classDateTime").value;
     //window.alert("DATE:"+obj.length);
-    dat='2018-06-08 8:00:00.000'
+    //dat='2018-06-08 8:00:00.000'
     //dat='2018-11-12 19:15:00.000';
-    lis.push(dat);
+    //lis.push(dat);
     console.log("Going to click");
     //$('#log').click(log_button());
     $('#log').click(function() {
+    //dat= document.getElementById("classDateTime").value;
+    dat2=document.getElementById("date").value;
+    time2=document.getElementById("time").value;
+    //window.alert("DATE:"+dat);
+    //window.alert("date:"+dat2+" time:"+time2);
+    lis_dat=dat2+" "+time2+":00.000"
+    window.alert(lis_dat);
+    lis=[]
+    lis.push(lis_dat);
     console.log("click log function");
     log_button();
     });
